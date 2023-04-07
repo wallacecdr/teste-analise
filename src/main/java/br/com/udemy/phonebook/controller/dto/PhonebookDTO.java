@@ -1,15 +1,22 @@
 package br.com.udemy.phonebook.controller.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PhonebookDTO {
 
-    private final String id;
-    private final String name;
-    private final String address;
-    private final String number;
-    private final String complement;
-    private final String zipNumber;
-    private final String city;
-    private final String uf;
+    private String id;
+    private String name;
+    private String address;
+    private String number;
+    private String complement;
+    private String zipNumber;
+    private String city;
+    private String uf;
+
+    public PhonebookDTO() {
+
+    }
 
     public PhonebookDTO(Builder builder) {
         this.id = builder.id;
