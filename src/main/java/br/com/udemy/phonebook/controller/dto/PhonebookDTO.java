@@ -10,7 +10,7 @@ public class PhonebookDTO {
     private String address;
     private String number;
     private String complement;
-    private String zipNumber;
+    private String zipCode;
     private String city;
     private String uf;
 
@@ -24,7 +24,7 @@ public class PhonebookDTO {
         this.address = builder.address;
         this.number = builder.number;
         this.complement = builder.complement;
-        this.zipNumber = builder.zipNumber;
+        this.zipCode = builder.zipCode;
         this.city = builder.city;
         this.uf = builder.uf;
     }
@@ -49,8 +49,8 @@ public class PhonebookDTO {
         return complement;
     }
 
-    public String getZipNumber() {
-        return zipNumber;
+    public String getZipCode() {
+        return zipCode;
     }
 
     public String getCity() {
@@ -71,7 +71,7 @@ public class PhonebookDTO {
         private String address;
         private String number;
         private String complement;
-        private String zipNumber;
+        private String zipCode;
         private String city;
         private String uf;
 
@@ -100,8 +100,8 @@ public class PhonebookDTO {
             return this;
         }
 
-        public Builder withZipNumber(String zipNumber) {
-            this.zipNumber = zipNumber;
+        public Builder withZipCode(String zipCode) {
+            this.zipCode = zipCode;
             return this;
         }
 

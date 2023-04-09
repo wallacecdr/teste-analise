@@ -18,7 +18,7 @@ public class PhonebookDTOConverter {
                     phonebook.setAddress(source.getAddress());
                     phonebook.setNumber(source.getNumber());
                     phonebook.setComplement(source.getComplement());
-                    phonebook.setZipNumber(source.getZipNumber());
+                    phonebook.setZipCode(source.getZipCode());
                     phonebook.setCity(source.getCity());
                     phonebook.setUf(source.getUf());
                     return phonebook;
@@ -34,7 +34,7 @@ public class PhonebookDTOConverter {
                         .withAddress(source.getAddress())
                         .withNumber(source.getNumber())
                         .withComplement(source.getComplement())
-                        .withZipNumber(source.getZipNumber())
+                        .withZipCode(source.getZipCode())
                         .withCity(source.getCity())
                         .withUf(source.getUf())
                         .build())

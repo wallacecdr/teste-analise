@@ -16,9 +16,17 @@ public class Phonebook {
     private String address;
     private String number;
     private String complement;
-    private String zipNumber;
+    private String zipCode;
     private String city;
     private String uf;
+
+    public boolean hasAddress() {
+        return address != null && !address.isEmpty();
+    }
+
+    public boolean hasZipCodeValid() {
+        return zipCode != null && !zipCode.isEmpty();
+    }
 
     public String getId() {
         return id;
@@ -60,12 +68,12 @@ public class Phonebook {
         this.complement = complement;
     }
 
-    public String getZipNumber() {
-        return zipNumber;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setZipNumber(String zipNumber) {
-        this.zipNumber = zipNumber;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
     public String getCity() {
