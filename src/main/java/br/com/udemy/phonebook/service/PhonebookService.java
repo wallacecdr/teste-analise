@@ -24,6 +24,10 @@ public class PhonebookService {
         return phonebookRepository.save(phonebook);
     }
 
+    public Phonebook update(Phonebook phonebook) {
+        return save(phonebook);
+    }
+
     public List<Phonebook> findAll() {
         return phonebookRepository.findAll();
     }
