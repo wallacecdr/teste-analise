@@ -4,7 +4,10 @@ import br.com.udemy.phonebook.controller.dto.PhonebookDTO;
 import br.com.udemy.phonebook.model.Phonebook;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class PhonebookDTOConverter {
@@ -39,5 +42,11 @@ public class PhonebookDTOConverter {
                         .withUf(source.getUf())
                         .build())
                 .orElse(null);
+    }
+
+    public List<PhonebookDTO> convert(List<Phonebook> phonebookList) {
+        return Optional.ofNullable(phonebookList)
+                .map(list -> list.stream().map(this::convert).collect(Collectors.toList()))
+                .orElse(new ArrayList<>());
     }
 }
