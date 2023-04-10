@@ -28,6 +28,10 @@ public class PhonebookService {
         return phonebookRepository.findAll();
     }
 
+    public void deleteById(String id) {
+        phonebookRepository.deleteById(id);
+    }
+
     private void updateAddressIfNecessary(Phonebook phonebook) {
         if(!phonebook.hasAddress() && phonebook.hasZipCodeValid()) {
             ViaCepDTO viaCepDTO = viaCepClient.getAddress(phonebook.getZipCode());
