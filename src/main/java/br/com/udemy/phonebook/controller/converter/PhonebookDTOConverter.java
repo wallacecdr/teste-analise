@@ -49,4 +49,19 @@ public class PhonebookDTOConverter {
                 .map(list -> list.stream().map(this::convert).collect(Collectors.toList()))
                 .orElse(new ArrayList<>());
     }
+
+    public Phonebook convert(String id, String name, String address, String number,
+                                      String complement, String zipCode, String city, String uf) {
+        Phonebook phonebook = new Phonebook();
+        phonebook.setId(id);
+        phonebook.setName(name);
+        phonebook.setAddress(address);
+        phonebook.setNumber(number);
+        phonebook.setComplement(complement);
+        phonebook.setZipCode(zipCode);
+        phonebook.setCity(city);
+        phonebook.setUf(uf);
+
+        return phonebook;
+    }
 }

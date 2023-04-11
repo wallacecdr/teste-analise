@@ -3,7 +3,9 @@ package br.com.udemy.phonebook.service;
 import br.com.udemy.phonebook.client.ViaCepClient;
 import br.com.udemy.phonebook.client.dto.ViaCepDTO;
 import br.com.udemy.phonebook.model.Phonebook;
+import br.com.udemy.phonebook.repository.PhonebookCustomRepository;
 import br.com.udemy.phonebook.repository.PhonebookRepository;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,10 +14,12 @@ import java.util.List;
 public class PhonebookService {
 
     private final PhonebookRepository phonebookRepository;
+    private final PhonebookCustomRepository customRepository;
     private final ViaCepClient viaCepClient;
 
-    public PhonebookService(PhonebookRepository phonebookRepository, ViaCepClient viaCepClient) {
+    public PhonebookService(PhonebookRepository phonebookRepository, PhonebookCustomRepository customRepository, ViaCepClient viaCepClient) {
         this.phonebookRepository = phonebookRepository;
+        this.customRepository = customRepository;
         this.viaCepClient = viaCepClient;
     }
 
@@ -44,5 +48,9 @@ public class PhonebookService {
             phonebook.setCity(viaCepDTO.getCity());
             phonebook.setUf(viaCepDTO.getUf());
         }
+    }
+
+    public Page<Phonebook> findPaginated(Phonebook phonebook, Integer pageNumber, Integer pageSize) {
+        return customRepository.findPaginated(phonebook, pageNumber, pageSize);
     }
 }
