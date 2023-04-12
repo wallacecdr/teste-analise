@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class NotificationListener {
 
     @StreamListener(target = MessagingChannels.PHONEBOOK_NOTIFICATION_INPUT)
-    public void receive(NotificationDTO dto) {
-        System.out.println("Mensagem recebida: " + dto.getNotification());
+    public void handleNotification(NotificationDTO notification) {
+        System.out.println("Mensagem recebida: " + notification.getNotification());
     }
 }
